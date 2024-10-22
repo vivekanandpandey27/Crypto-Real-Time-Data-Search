@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>  </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class = "bg-black">
+
+    <!-- For Crypto Search Engine Page-->
+    <div >
+            <div class = "flex flex-col justify-center items-center">
+
+
+                    <!-- Heading -->
+                     <div class = "mt-14 text-3xl font-bold text-white">Crypto Vex</div>
+
+                    <!-- Search Bar  -->
+                     <div>  
+                        <input type="text" id = "Search" class = "border-2 mt-8 w-[30rem] min-h-10 rounded-2xl p-2 font-semibold  focus-within:border-orange-400" placeholder="   Type Crypto Name ">
+                        <label for="Search" id = "submit" class = "ml-8 border-2 border-slate-900 rounded-2xl p-2 font-extrabold bg-orange-400">Search</label>
+                    </div>
+
+                    <!-- Search Result -->
+                     <div class = "flex flex-col justify-center items-center overflow-hidden" id = "Result_area">
+                        <!-- Coin Image Symbol -->
+                        <div class = "ml-[1.3rem]">   
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP9LqWlYp4fNfUp2uCvxkYcR1hkn8Q3ajIww&s" alt="" id = "img"  class = "mt-9 rounded-full h-28 w-28 mr-10">
+                        </div>
+                         
+                         <!-- Symbol -->
+                         <div class = "rounded-xl h-8 w-40 mt-2 font-bold text-center text-white mr-5" id = "coin_symbol_field">Symbol</div>
+
+
+                         <!-- Live Price Coin-->
+                         <div id = "price_deatils" class = "border-2 border-orange-400 rounded-xl h-8 w-40 mt-4 font-bold text-center text-white">Price : XXXX USD</div>
+
+                         <!-- 24Hour Change-->
+                         <div id = "price_change" class = "border-2 border-orange-400 rounded-xl h-8 w-96 mt-4 font-bold self-center text-white text-center"> 24Hour Change : <span id = "change_percentage" class = "scale-100">XXX.0X %</span></div>
+                        
+
+                     </div>
+
+
+                      <!-- Loading Animation -->
+                      <div id = "animation" class = "scale-100 hidden overflow-hidden">
+                        <img src="./bc56b31a50e519be2ed335a47e75bc62.gif" alt="" class = "mt-16 rounded-full h-60 w-80 scale-150 mr-6">
+                      </div>
+
+                      <!-- Latest Trend Crypto -->
+                       <div class = "border-2 border-white h-52 w-[96rem] mt-4 flex rounded-lg">
+                            <!-- Left -->
+                             <div class = "w-1/2  flex flex-col shadow-lg " id = "Left">
+                                <!-- head1 -->
+                                <div class = "font-bold  text-white text-center" id = "most_positive_24h">24 Hours Most Pump</div>
+
+                                <div class = " flex">
+                                        <!-- Mini left -->
+                                       <div class = "  flex flex-col">
+                                           <img src="./bc56b31a50e519be2ed335a47e75bc62.gif" alt="" id = "img_most_positive_24h"  class = " mt-1 rounded-full h-32 w-30 ">
+                                           <div class = "font-bold text-center text-white  pb-6" id = "trend_coin_symbol">ZET</div>
+                                       </div>
+       
+                                       <!-- Mini Right -->
+                                       <div class = "flex flex-col  items-center">
+                                            <!-- Coin Name -->
+                                            <div id = "trend_coin_name" class = "border-2 border-orange-400 rounded-xl h-8 w-36 mt-4 font-bold self-center text-white text-center"> Zepto </div>
+
+                                            <!-- Live Price Coin-->
+                                            <div id = "trend_price_deatils" class = "border-2 border-orange-400 rounded-xl h-8 w-96 mt-4 font-bold text-center text-white ">Price : 1400 USD</div>
+                   
+                                            <!-- 24Hour Change-->
+                                            <div id = "trend_price_change" class = "border-2 border-orange-400 rounded-xl h-8 w-96 mt-4 font-bold self-center text-green-600 text-center"> 24Hour Change : <span id = "change_percentage" class = "scale-100">3.004 %</span></div>
+                                       </div>
+
+                                       <!-- Trend img -->
+                                        <div>
+                                            <img src="./6.webp" alt="" class = "mt-1 rounded-full h-40 w-30">
+                                        </div>
+                                </div>
+                                
+
+                                
+                             </div>
+                            
+                               
+                            
+                             <!-- Right -->
+                             <div class = "w-1/2 flex flex-col border-l-2 border-white shadow-lg sha" id = "Right">
+                                <!-- head1 -->
+                                <div class = "font-bold  text-white text-center" id = "most_negative_24h">24 Hours Most Dump</div>
+
+                                <div class = " flex">
+                                        <!-- Mini left -->
+                                       <div class = "  flex flex-col">
+                                           <img src="./bc56b31a50e519be2ed335a47e75bc62.gif" alt="" id = "img_most_negative_24h"  class = "mt-1 rounded-full h-32 w-30 ml-4 mr-3">
+                                           <div class = "font-bold text-center text-white pb-6" id = "neg_trend_coin_symbol">ZET</div>
+                                       </div>
+       
+                                       <!-- Mini Right -->
+                                       <div class = "flex flex-col  items-center">
+                                            <!-- Coin Name -->
+                                            <div id = "neg_trend_coin_name" class = "border-2 border-orange-400 rounded-xl h-8 w-56 mt-4 font-bold self-center text-white text-center"> Zepto </div>
+
+                                            <!-- Live Price Coin-->
+                                            <div id = "neg_trend_price_deatils" class = "border-2 border-orange-400 rounded-xl h-8 w-96 mt-4 font-bold text-center text-white ">Price : 1400 USD</div>
+                   
+                                            <!-- 24Hour Change-->
+                                            <div id = "neg_trend_price_change" class = "border-2 border-orange-400 rounded-xl h-8 w-96 mt-4 font-bold self-center text-red-600 text-center"> 24Hour Change : <span id = "change_percentage" class = "scale-100">3.004 %</span></div>
+                                       </div>
+
+                                        <!-- Trend img -->
+                                        <div>
+                                            <img src="./8.webp" alt="" class = "mt-1 rounded-full h-40 w-30">
+                                        </div>
+                                </div>
+                                
+
+                                
+                             </div>
+                             
+                               
+                       </div>
+            </div>
+           
+    </div>
+
+
+   
+    <!-- <label for="Search" id = "submit">Search</label> -->
+
+
+    <script src="script.js" ></script>
+</body>
+</html>
